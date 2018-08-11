@@ -16,6 +16,17 @@ let app = express();
 
 */
 app.use(express.static("www"));
+// Express 中介函式
+app.use(function (req, res, next) {
+    console.log("Middleware 1");
+    next(); // go to next function
+});
+app.get("/", function (req, res) {
+    res.send("Hello Middleware");
+});
+
+
+
 
 // start the server at http://localhost:3000/
 app.listen(3000, function () {
