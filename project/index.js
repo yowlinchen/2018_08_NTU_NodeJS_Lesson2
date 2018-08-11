@@ -8,8 +8,18 @@ let express = require("express");
 let app = express();
 
 // Take care /image request
+/*
+    http://主機名稱/路徑?參數列表
+    參數列表：
+        參數名稱=參數資料＆參數名稱＝參數資料&...
+    例如：
+        http://localhost:3000/image?name=landscape.jpg
+*/
 app.get("/image", function (req, res) {
-    res.download("./landscape.jpg");
+    // use req.query.參數名稱 to get HTTP 參數
+    let name = req.query.name;
+    res.send(name);
+    // res.download("./landscape.jpg");
 });
 
 // Take care of / request
