@@ -9,10 +9,13 @@ let app = express();
     http://localhost:3000/image/landscape.jpg
     http://localhost:3000/image/package.jpg
  */
-app.get("/image/*", function (req, res) {
-    let path = req.path;
-    let name = path.replace("/image/", "");
+app.get("/image/:name", function (req, res) {
+    // let path = req.path;
+    // let name = path.replace("/image/", "");
     // res.send(path);
+
+    // use req.params.參數名稱 取得路徑參數
+    let name = req.params.name;
     res.download("./" + name);
 });
 
