@@ -18,6 +18,9 @@ app.get("/", function (req, res) {
     console.log(req.method);
     console.log(req.ip);
     console.log(req.hostname);
+    // get request header
+    let lang = req.get("Accept-Language");
+    console.log(lang);
     res.send("<h3>My Image</h3><img src='/image' />");
     // set rsponse header
     // res.set("test", "my header");
