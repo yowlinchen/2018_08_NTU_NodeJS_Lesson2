@@ -1,5 +1,5 @@
 let lib = require("./lib.js");
-console.log(lib);
+lib(3, 4);
 
 // can't use HTML DOM, for example alert()
 // let x = 3;
