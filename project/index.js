@@ -14,6 +14,10 @@ app.get("/image", function (req, res) {
 
 // Take care of / request
 app.get("/", function (req, res) {
+    // get connection method
+    console.log(req.method);
+    console.log(req.ip);
+    console.log(req.hostname);
     res.send("<h3>My Image</h3><img src='/image' />");
     // set rsponse header
     // res.set("test", "my header");
