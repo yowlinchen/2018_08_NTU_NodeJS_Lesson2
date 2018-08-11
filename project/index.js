@@ -31,7 +31,7 @@ app.get("/", function (req, res) {
     // get request header
     let lang = req.get("Accept-Language");
     console.log(lang);
-    res.send("<h3>My Image</h3><img src='/image' />");
+    res.send("<h3>My Image</h3><img src='/image?name=landscape.jpg' />");
     // set rsponse header
     // res.set("test", "my header");
     // let obj = {
