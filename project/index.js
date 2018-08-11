@@ -7,6 +7,12 @@ let express = require("express");
 // create applicatoin object
 let app = express();
 
+// Take care /image request
+app.get("/image", function (req, res) {
+    res.download("./landscape.jpg");
+});
+
+// Take care of / request
 app.get("/", function (req, res) {
     // set rsponse header
     res.set("test", "my header");
@@ -15,18 +21,8 @@ app.get("/", function (req, res) {
         y: 4
     };
     // res.send(obj);
-    res.send(JSON.stringify(obj));
+    res.send(obj);
 });
-
-// take care of /test request
-// app.get("/test", function (req, res) {
-//     res.send("<b>Hello</b> Test <script>alert('test');</script>");
-// });
-
-// // take care path / requirement
-// app.get("/", function (req, res) {
-//     res.send("Hello Node.js");
-// });
 
 // start the server at http://localhost:3000/
 app.listen(3000, function () {
