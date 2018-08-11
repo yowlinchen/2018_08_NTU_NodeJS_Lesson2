@@ -8,11 +8,14 @@ let express = require("express");
 let app = express();
 
 app.get("/", function (req, res) {
+    // set rsponse header
+    res.set("test", "my header");
     let obj = {
         x: 3,
         y: 4
     };
-    res.send(obj);
+    // res.send(obj);
+    res.send(JSON.stringify(obj));
 });
 
 // take care of /test request
