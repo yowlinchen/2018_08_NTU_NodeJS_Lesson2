@@ -18,8 +18,8 @@ let app = express();
 app.get("/image", function (req, res) {
     // use req.query.參數名稱 to get HTTP 參數
     let name = req.query.name;
-    res.send(name);
-    // res.download("./landscape.jpg");
+    // res.send(name);
+    res.download("./" + name);
 });
 
 // Take care of / request
